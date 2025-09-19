@@ -11,7 +11,7 @@ To process **structured data** in **Excel** and **JSON format**, utilizing local
 - **Structured Data Processing**: Excel data is processed and converted into structured JSON format.
 - **Document JSON Preparation**: Structured data is transformed into document-based JSONs for classification.
 - **Local Llama Model Integration**: The Llama model is used locally to process the data and generate insights.
-- **Chat Helper Loop**: A specific loop is created for assisting with chat-based interactions, allowing for dynamic responses.
+- **Chat Helper Loop**: I wrote code (commented as `#`) that edits the structured JSON file and prepares it for dynamic interactions. This code is followed by a loop that allows chat queries to be processed dynamically, assisting in analyzing the structured data.
 - **GPU Adaptation**: The project is adapted to use **GPU** for faster model inference when available.
 
 ---

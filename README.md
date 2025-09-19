@@ -8,8 +8,9 @@ This project leverages **Retrieval-Augmented Generation (RAG)** with structured 
 To process **structured data** in **Excel** and **JSON format**, utilizing local **Llama models** to generate document-based insights and assist with classification tasks. The system allows for effective interaction with structured data, while preserving the original structure for later use in tasks such as classification and model training.
 
 ### Key Components:
-- **Structured Data Processing**: Excel data is processed and converted into structured JSON format.
-- **Document JSON Preparation**: Structured data is transformed into document-based JSONs for classification.
+### 2. **Data Handling & Preprocessing**
+- **Excel Data Processing**: The data from the Excel file is converted into **row_dict** objects. Each row is turned into a **combined string** with fields like `x`, `y`, `z`, which is then sent to the model for processing.
+- **Document Preparation**: The structured data is converted into **Langchain documents** for classification and further processing.
 - **Local Llama Model Integration**: The Llama model is used locally to process the data and generate insights.
 - **Chat Helper Loop**: I wrote code (commented as `#`) that edits the structured JSON file and prepares it for dynamic interactions. This code is followed by a loop that allows chat queries to be processed dynamically, assisting in analyzing the structured data.
 - **GPU Adaptation**: The project is adapted to use **GPU** for faster model inference when available.
@@ -24,29 +25,13 @@ To process **structured data** in **Excel** and **JSON format**, utilizing local
 - Ensured model installation and environment configurations, especially for the local use of the **Qwen2.5 model** with **GPU support** for faster processing.
 
 ### 2. **Data Handling & Preprocessing**
-- **Excel Data Processing**: Loaded structured Excel files, handled missing values, and standardized the data for conversion to JSON format.
-- **Document JSON Preparation**: Structured data is converted into labeled **JSON documents** to facilitate further use in classification tasks.
-- **Two Loops**:
-  - One loop is dedicated to processing **Excel data** and converting it into structured JSON.
-  - Another loop is designed for **chat-based interactions** to help process document-related insights using a helper function for queries.
 
 ### 3. **Model Integration & Data Preservation**
 - **Llama Model**: Installed and utilized **Llama models** locally to process the structured data.
-- Preserved the original **structured data** format to ensure it is reusable and stored securely.
 - Used **FAISS** for vector-based document search, ensuring efficient retrieval of relevant data during classification.
 
-### 4. **Classification & Interaction**
+### 4. **Classification**
 - Prepared structured data for future classification tasks.
-- Implemented **chat helper functionality** that allows users to interact with the data, process queries, and gain insights dynamically.
-
----
-
-## ⚠️ **Known Issues & To-Do**
-
-- **Model Performance**: Check the performance of the Llama models with larger datasets to ensure efficiency.
-- **Data Encoding**: Ensure that all structured data is correctly encoded in JSON format for later use in classification.
-- **Error Handling**: Add additional error handling for cases when structured data cannot be processed correctly.
-- **Optimization**: Investigate further optimizations for data retrieval and Llama model inference.
 
 ---
 
